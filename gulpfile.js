@@ -2,60 +2,34 @@ const { src, dest, watch, parallel, series } = require('gulp');
 const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 const del = require('del');
-//const svgSprite = require('gulp-svg-sprite');
-//const fileInclude = require('gulp-file-include');
 
 
 function browsersync () {
   browserSync.init({
     server: {
-      baseDir: 'app/'
+      baseDir: 'src/'
     },
     notify: false
-  })
+  });
 }
 
-// function sprite() {
-//   return src('images/icons/**/*.svg')
-//   .pipe(svgSprite({
-//     mode: {
-//       stack: {
-//         sprite: '../sprite.svg'
-//       }
-//     }
-//   }))
-//   .pipe(dest('app/images/svg'))
-// }
-
 function styles() {
-  return src('app/scss/style.scss')
+  return src('src/scss/style.scss')
   .pipe(scss({outputStyle: 'compressed'}))
   .pipe(concat('style.min.css'))
   .pipe(autoprefixer({
     overrideBrowserslist: ['last 10 versions'],
     grid: true
   }))
-  .pipe(dest('app/css'))
-  .pipe(browserSync.stream())
-}
-
-function scripts() {
-  return src([
-    'node_modules/jquery/dist/jquery.js',
-    'app/js/main.js'
-  ])
-  .pipe(concat('main.min.js'))
-  .pipe(uglify())
-  .pipe(dest('app/js'))
-  .pipe(browserSync.stream())
+  .pipe(dest('src/css'))
+  .pipe(browserSync.stream());
 }
 
 function images() {
-  return src('app/images/**/*.*')
+  return src('src/images/**/*.*')
   .pipe(imagemin([
     imagemin.gifsicle({interlaced: true}),
     imagemin.mozjpeg({quality: 75, progressive: true}),
@@ -67,47 +41,33 @@ function images() {
         ]
     })
   ]))
-  .pipe(dest('dist/images'))
+  .pipe(dest('dist/images'));
 }
 
-// function htmlInclude() {
-//   return src(['./app/index.html'])
-//   .pipe(fileInclude({
-//     prefix: '@',
-//     basepath: '@file'
-//   }))
-//   .pipe(dest('./dist'))
-//   .pipe(browserSync.stream())
-// }
-
 function cleanDist() {
-  return del('dist')
+  return del('dist');
 }
 
 function build() {
   return src([
-    'app/**/*.html',
-    'app/fonts/**/*',
-    'app/css/style.min.css',
-    'app/js/main.min.js'
-  ], {base: 'app'})
-  .pipe(dest('dist'))
+    'src/**/*.html',
+    'src/fonts/**/*',
+    'src/css/style.min.css'
+  ], {base: 'src'})
+  .pipe(dest('dist'));
 }
 
 function watching() {
-  watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/**/*.html']).on('change', browserSync.reload) /* htmlInclude */;
+  watch(['src/scss/**/*.scss'], styles);
+  watch(['src/js/**/*.js', '!src/js/main.min.js']);
+  watch(['src/**/*.html']).on('change', browserSync.reload);
 }
 
 exports.styles = styles;
-exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.cleanDist = cleanDist;
 exports.images = images;
-//exports.sprite = sprite;
-//exports.htmlInclude = htmlInclude;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, browsersync, watching);

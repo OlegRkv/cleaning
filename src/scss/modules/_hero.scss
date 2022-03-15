@@ -1,0 +1,26 @@
+.hero {
+  &__offer {
+    max-width: 570px;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    display: inline;
+  }
+
+  &__title-warranty {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__calculating {
+    max-width: 450px;
+    margin-bottom: 50px;
+    font-size: 18px;
+  }
+
+  &__button {
+    padding: 30px 30px 30px 45px;
+  }
+}

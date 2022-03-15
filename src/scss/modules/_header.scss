@@ -1,0 +1,12 @@
+.header {
+  padding-top: 20px;
+  padding-bottom: 130px;
+  background-image: url("../images/hero-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__nav {
+    margin-bottom: 85px;
+  }
+}
