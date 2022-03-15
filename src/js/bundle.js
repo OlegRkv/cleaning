@@ -2,6 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/faq.js":
+/*!*******************************!*\
+  !*** ./src/js/modules/faq.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function faq() {
+  const faqBtn = document.querySelectorAll('.faq__item-header');
+  faqBtn.forEach(item => {
+    item.addEventListener('click', event => {
+      const target = event.target;
+      console.log(target);
+
+      if (target.classList.contains('faq__item-header_active')) {
+        target.classList.remove('faq__item-header_active');
+        target.nextElementSibling.classList.remove('faq__item-content_active');
+      } else {
+        console.log(target.nextElementSibling);
+        target.classList.add('faq__item-header_active');
+        target.nextElementSibling.classList.add('faq__item-content_active');
+      }
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (faq);
+
+/***/ }),
+
 /***/ "./src/js/modules/tabs.js":
 /*!********************************!*\
   !*** ./src/js/modules/tabs.js ***!
@@ -96,11 +126,14 @@ var __webpack_exports__ = {};
   \**************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_faq__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/faq */ "./src/js/modules/faq.js");
+
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('tabs__button_active');
+  (0,_modules_faq__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 }();
 /******/ })()
