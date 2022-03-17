@@ -1,0 +1,23 @@
+.docs {
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    display: block;
+    max-width: 610px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 22px;
+    color: #959A9D;
+  }
+
+  &__slider {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  
+}

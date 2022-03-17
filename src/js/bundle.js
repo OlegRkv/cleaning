@@ -14,13 +14,11 @@ function faq() {
   faqBtn.forEach(item => {
     item.addEventListener('click', event => {
       const target = event.target;
-      console.log(target);
 
       if (target.classList.contains('faq__item-header_active')) {
         target.classList.remove('faq__item-header_active');
         target.nextElementSibling.classList.remove('faq__item-content_active');
       } else {
-        console.log(target.nextElementSibling);
         target.classList.add('faq__item-header_active');
         target.nextElementSibling.classList.add('faq__item-content_active');
       }
@@ -29,6 +27,60 @@ function faq() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (faq);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function slider() {
+  const sliderItems = document.querySelectorAll('.slider__img'),
+        buttonPrev = document.querySelector('.slider__button_prev'),
+        buttonNext = document.querySelector('.slider__button_next'),
+        slidesInfo = document.querySelector('.slider__counter');
+  let currentSlide = 1;
+  hideContent();
+  showContent();
+  buttonPrev.addEventListener('click', () => {
+    if (currentSlide == 1) {
+      hideContent();
+      currentSlide = sliderItems.length;
+      showContent();
+    } else {
+      hideContent();
+      currentSlide--;
+      showContent();
+    }
+  });
+  buttonNext.addEventListener('click', () => {
+    if (currentSlide === sliderItems.length) {
+      hideContent();
+      currentSlide = 1;
+      showContent();
+    } else {
+      currentSlide++;
+      hideContent();
+      showContent();
+    }
+  });
+
+  function hideContent() {
+    sliderItems.forEach(item => {
+      item.classList.remove('slider__img_active');
+    });
+  }
+
+  function showContent() {
+    sliderItems[currentSlide - 1].classList.add('slider__img_active');
+    slidesInfo.textContent = `${currentSlide} / ${sliderItems.length}`;
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (slider);
 
 /***/ }),
 
@@ -127,6 +179,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
 /* harmony import */ var _modules_faq__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/faq */ "./src/js/modules/faq.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+
 
 
 
@@ -134,6 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('tabs__button_active');
   (0,_modules_faq__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 }();
 /******/ })()

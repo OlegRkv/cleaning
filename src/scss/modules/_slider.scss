@@ -1,0 +1,42 @@
+.slider {
+  padding: 30px 10px;
+  &__img {
+    display: none;
+    margin: 0 auto;
+  }
+
+  &__img_active {
+    display: block;
+  }
+
+  &__counter {
+    text-align: center;
+  }
+
+  &__buttons {
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 15px 15;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/icons/arrow.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+  }
+
+  &__button_prev {
+    transform: rotate(90deg);
+  }
+
+  &__button_next {
+    transform: rotate(-90deg);
+  }
+}
