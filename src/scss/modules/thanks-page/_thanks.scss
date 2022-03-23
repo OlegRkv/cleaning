@@ -1,0 +1,44 @@
+.thanks {
+  padding-top: 165px;
+  padding-bottom: 195px;
+  background-image: url("../images/thanks-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__title {
+    max-width: 505px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #4B5258;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__offer {
+    max-width: 460px;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  &__links {
+    max-width: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    display: block;
+    padding: 30px 48px;
+  }
+
+  &__link_whatsapp {
+    background-color: #7AD06D;
+  }
+
+  &__link_home {
+    background-color: $orange;
+  }
+}

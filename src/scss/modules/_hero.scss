@@ -1,4 +1,11 @@
 .hero {
+  padding-top: 180px;
+  padding-bottom: 130px;
+  background-image: url("../images/hero-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   &__offer {
     max-width: 570px;
     margin-bottom: 35px;

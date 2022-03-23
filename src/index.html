@@ -13,34 +13,35 @@
 <body>
 
   <header class="header">
-    <div class="container">
-      <nav class="header__nav menu">
-        <img class="logo" src="images/icons/logo.svg" alt="логотип">
-        <div class="menu__contact">
-          <a class="menu__phone" href="tel:+78007006050">8-800-700-60-50</a>
-          <span class="menu__work-time"> Пн-Вс: 9:00 - 21:00</span>
+      <nav class="header__nav">
+        <div class="container menu">
+          <img class="logo" src="images/icons/logo.svg" alt="логотип">
+          <div class="menu__contact">
+            <a class="menu__phone" href="tel:+78007006050">8-800-700-60-50</a>
+            <span class="menu__work-time"> Пн-Вс: 9:00 - 21:00</span>
+          </div>
+          <button class="menu__button" type="button" aria-label="заказать консультацию" data-modal>Заказать консультацию</button>
         </div>
-        <button class="menu__button" type="button" aria-label="заказать консультацию">Заказать консультацию</button>
       </nav>
-
-      <section class="header__hero hero">
-        <div class="hero__offer">
-          <h1 class="hero__title title">
-            Бережная уборка квартир и домов в СПБ
-            по фиксированной стоимости от 80₽/м²
-          </h1>
-          <span class="hero__title-warranty">с гарантией качества по договору</span>
-        </div>
-
-        <p class="hero__calculating">Получите точный расчёт стоимости и скидку 10% на первый заказ</p>
-
-        <button class="button hero__button" type="button" aria-label="Рассчитать стоимость">Рассчитать
-          стоимость</button>
-      </section>
-    </div>
   </header>
 
   <main class="main">
+    <section class="header__hero hero">
+        <div class="container">
+          <div class="hero__offer">
+            <h1 class="hero__title title">
+              Бережная уборка квартир и домов в СПБ
+              по фиксированной стоимости от 80₽/м²
+            </h1>
+            <span class="hero__title-warranty">с гарантией качества по договору</span>
+          </div>
+  
+          <p class="hero__calculating">Получите точный расчёт стоимости и скидку 10% на первый заказ</p>
+  
+          <button class="button hero__button" type="button" aria-label="Рассчитать стоимость" data-modal>Рассчитать
+            стоимость</button>
+        </div>
+      </section>
     <div class="container">
       <ul class="advantages">
         <li class="advantages__item advantages__item_bg1">
@@ -97,7 +98,7 @@
                       Комплексная уборка с удалением пыли, жира и грязи
                     </p>
                     <span class="service__time"><span>Время работы:</span> 5-7 часов</span>
-                    <button class="button service__button">Рассчитать стоимость</button>
+                    <button class="button service__button" data-modal>Рассчитать стоимость</button>
                   </div>
                 </li>
 
@@ -111,7 +112,7 @@
                       Подготовим ваше помещение к комфортному проживанию
                     </p>
                     <span class="service__time"><span>Время работы:</span> 5-7 часов</span>
-                    <button class="button service__button">Рассчитать стоимость</button>
+                    <button class="button service__button" data-modal>Рассчитать стоимость</button>
                   </div>
                 </li>
 
@@ -125,7 +126,7 @@
                       Уборка, для поддержания чистоты в квартире
                     </p>
                     <span class="service__time"><span>Время работы:</span> 2-4 часа</span>
-                    <button class="button service__button">Рассчитать стоимость</button>
+                    <button class="button service__button" data-modal>Рассчитать стоимость</button>
                   </div>
                 </li>
 
@@ -139,7 +140,7 @@
                       За чистыми окнами — грязь не живёт!
                     </p>
                     <span class="service__time"><span>Время работы:</span> 2-4 часа</span>
-                    <button class="button service__button">Рассчитать стоимость</button>
+                    <button class="button service__button" data-modal>Рассчитать стоимость</button>
                   </div>
                 </li>
 
@@ -150,10 +151,10 @@
                     </div>
                     <h4 class="service__title">Защитное покрытие</h4>
                     <p class="service__descr">
-                      Глубокая очистка и нанесение защитного слоя полироли 
+                      Глубокая очистка и нанесение защитного слоя полироли
                     </p>
                     <span class="service__time"><span>Время работы:</span> 6-12 часов</span>
-                    <button class="button service__button">Рассчитать стоимость</button>
+                    <button class="button service__button" data-modal>Рассчитать стоимость</button>
                   </div>
                 </li>
 
@@ -167,7 +168,7 @@
                       Срочная уборка с выездом в течении часа
                     </p>
                     <span class="service__time"><span>Время работы:</span> до 3 часов</span>
-                    <button class="button service__button">Рассчитать стоимость</button>
+                    <button class="button service__button" data-modal>Рассчитать стоимость</button>
                   </div>
                 </li>
               </ul>
@@ -177,15 +178,19 @@
           <div class="tabs__content">
             <div class="about">
               <p>
-                Наша команда – это обученные, высокоорганизованные и прошедшие профессиональный отбор сотрудники, которые относятся к уборке помещений, не как к ремеслу, а как к профессиональной современной услуге, которая требует от исполнителей мастерства, сноровки и специальных знаний в области клининга!
+                Наша команда – это обученные, высокоорганизованные и прошедшие профессиональный отбор сотрудники,
+                которые относятся к уборке помещений, не как к ремеслу, а как к профессиональной современной услуге,
+                которая требует от исполнителей мастерства, сноровки и специальных знаний в области клининга!
               </p>
 
               <p>
-                Мы следим за новинками, которые регулярно появляются в сфере клининга, чтобы предложить Вам лучшее решение любой даже самой сложной задачи.
+                Мы следим за новинками, которые регулярно появляются в сфере клининга, чтобы предложить Вам лучшее
+                решение любой даже самой сложной задачи.
               </p>
 
               <p>
-                Специалисты нашей компании работают для Вас 24 часа 7 дней в неделю, что позволяет нам быть оперативнее конкурентов и выполнять больший объем за кратчайшие сроки.
+                Специалисты нашей компании работают для Вас 24 часа 7 дней в неделю, что позволяет нам быть оперативнее
+                конкурентов и выполнять больший объем за кратчайшие сроки.
               </p>
             </div>
           </div>
@@ -193,7 +198,9 @@
           <div class="tabs__content">
             <div class="mission">
               <p>
-                Миссия нашей компании – подарить людям свободное время. Мы, как профессионалы, понимаем сколько времени и сил занимает уборка у частных лиц, а так же, насколько трудно организовать собственный штат для обеспечения помещения клинингом.
+                Миссия нашей компании – подарить людям свободное время. Мы, как профессионалы, понимаем сколько времени
+                и сил занимает уборка у частных лиц, а так же, насколько трудно организовать собственный штат для
+                обеспечения помещения клинингом.
               </p>
             </div>
           </div>
@@ -211,7 +218,8 @@
             </div>
             <div class="faq__item-content">
               <p>
-                Многие клиенты остаются дома, когда впервые заказывают уборку. В дальнейшем многие предпочитают оставлять менеджера и клинеров дома, а в освободившееся время занимаются более приятными делами
+                Многие клиенты остаются дома, когда впервые заказывают уборку. В дальнейшем многие предпочитают
+                оставлять менеджера и клинеров дома, а в освободившееся время занимаются более приятными делами
               </p>
             </div>
           </li>
@@ -222,7 +230,8 @@
             </div>
             <div class="faq__item-content">
               <p>
-                Да, наши специалисты укомплектованы необходимым инвентарем и чистящими средствами. Мы используем только профессиональную химию и оборудование. И это позволяет нам добиваться идеальной чистоты!
+                Да, наши специалисты укомплектованы необходимым инвентарем и чистящими средствами. Мы используем только
+                профессиональную химию и оборудование. И это позволяет нам добиваться идеальной чистоты!
               </p>
             </div>
           </li>
@@ -232,7 +241,9 @@
             </div>
             <div class="faq__item-content">
               <p>
-                Опыт нашей работы больше 8 лет. За это время мы разработали уникальную программу обучения для наших сотрудников. Клинеры знают каким способом и на каких поверхностях нужно использовать специализированную химию. Поэтому мы обеспечим сохранность Вашего имущества.
+                Опыт нашей работы больше 8 лет. За это время мы разработали уникальную программу обучения для наших
+                сотрудников. Клинеры знают каким способом и на каких поверхностях нужно использовать специализированную
+                химию. Поэтому мы обеспечим сохранность Вашего имущества.
               </p>
             </div>
           </li>
@@ -253,7 +264,8 @@
             </div>
             <div class="faq__item-content">
               <p>
-                Это достаточно трудоемкий процесс и поэтому лучше снимать пленку сразу после установки окон. Но, если Вы этого не сделали, то мы с помощью парогенератора и специальной химии снимем пленку.
+                Это достаточно трудоемкий процесс и поэтому лучше снимать пленку сразу после установки окон. Но, если
+                Вы этого не сделали, то мы с помощью парогенератора и специальной химии снимем пленку.
               </p>
             </div>
           </li>
@@ -278,25 +290,104 @@
         <span class="docs__subtitle">Моющие средства от проверенных производителей</span>
 
         <div class="docs__slider slider">
-            <div class="slider__content">
-              <img class="slider__img slider__img_active" src="images/slider-img/1.png" alt="сертификат">
-              <img class="slider__img" src="images/slider-img/2.png" alt="сертификат">
-              <img class="slider__img" src="images/slider-img/3.png" alt="сертификат">
-              <img class="slider__img" src="images/slider-img/4.png" alt="сертификат">
-              <img class="slider__img" src="images/slider-img/5.png" alt="сертификат">
-            </div>
-            <div class="slider__counter">
-              <span class="current-slide"></span>
-              <span class="total-slide"></span>
-            </div>
-            <div class="slider__buttons">
-              <button class="slider__button slider__button_prev"></button>
-              <button class="slider__button slider__button_next"></button>
-            </div>
+          <div class="slider__content">
+            <img class="slider__img slider__img_active" src="images/slider-img/1.png" alt="сертификат">
+            <img class="slider__img" src="images/slider-img/2.png" alt="сертификат">
+            <img class="slider__img" src="images/slider-img/3.png" alt="сертификат">
+            <img class="slider__img" src="images/slider-img/4.png" alt="сертификат">
+            <img class="slider__img" src="images/slider-img/5.png" alt="сертификат">
+          </div>
+          <div class="slider__counter">
+            <span class="current-slide"></span>
+            <span class="total-slide"></span>
+          </div>
+          <div class="slider__buttons">
+            <button class="slider__button slider__button_prev"></button>
+            <button class="slider__button slider__button_next"></button>
+          </div>
         </div>
       </div>
     </div>
+
+    <section class="price">
+      <div class="container price__container">
+        <h2 class="title price__title">
+          Хотите приценится? <br> Получите актуальный прайс-лист <span>услуг всего в 1 клик</span>
+        </h2>
+
+        <form class="form" id="main-form" action="#">
+          <span class="form__question">Где вам удобнее получить?</span>
+
+          <div class="form__wrapper">
+            <div class="form__labeles">
+              <label class="form__choice form__choice_active form__choice_telegram">
+                <input class="form__radio" type="radio" name="messanger" value="telegram" checked>
+              </label>
+              <label class="form__choice form__choice_whatsapp">
+                <input class="form__radio" type="radio" name="messanger" value="whatsapp">
+              </label>
+            </div>
+            <input class="form__phone" type="phone" name="phone" placeholder="Введите ваш телефон" minlength="11" maxlength="11" required>
+            <button class="button form__button" type="submit" disabled>Получить прайс</button>
+            <div class="form__privacy">
+              <label class="form__privacy-label">
+                <input class="form__checkbox" type="checkbox">
+                <span class="form__privacy-text">Нажимая на кнопку вы соглашаетесь с условиями <a href="#"
+                    class="form__privacy-link">Политики конфиденциальности</a>
+                </span>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <img class="logo" src="images/icons/logo.svg" alt="логотип">
+    </div>
+  </footer>
+
+  <div class="modal">
+    <div class="modal__wrapper">
+      <div class="modal__content">
+        <p class="modal__offer">
+          Закажите бережную уборку, по фиксированной стоимости, с выездом персонала в течении часа
+        </p>
+        <p class="modal__descr">
+          Отправьте свой номер нашему менеджеру Алине, она свяжется с вами через 10 минут, поможет с выбором и расчитает стоимость
+        </p>
+        
+        <form class="form modal__form" id="modal-form" action="#">
+          <span class="form__question">Где вам удобнее получить?</span>
+
+          <div class="form__wrapper">
+            <div class="form__labeles">
+              <label class="form__choice form__choice_active form__choice_telegram">
+                <input class="form__radio" type="radio" name="messanger" value="telegram" checked>
+              </label>
+              <label class="form__choice form__choice_whatsapp">
+                <input class="form__radio" type="radio" name="messanger" value="whatsapp">
+              </label>
+            </div>
+            <input class="form__phone" type="phone" name="phone" placeholder="Введите ваш телефон" minlength="11" maxlength="11" required>
+            <button class="button form__button" type="submit" disabled>Получить прайс</button>
+            <div class="form__privacy">
+              <label class="form__privacy-label">
+                <input class="form__checkbox" type="checkbox">
+                <span class="form__privacy-text">Нажимая на кнопку вы соглашаетесь с условиями <a href="#"
+                    class="form__privacy-link">Политики конфиденциальности</a>
+                </span>
+              </label>
+            </div>
+          </div>
+        </form>
+        <button class="modal__close" type="button"></button>
+      </div>
+      <!-- /.modal__content -->
+    </div>
+  </div>
 
   <script src="js/bundle.js"></script>
 </body>
