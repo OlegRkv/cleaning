@@ -42,6 +42,11 @@
       background-repeat: no-repeat;
       transition: transform 0.2s;
     }
+
+    @media (max-width: 576px) {
+      padding: 20px;
+      padding-right: 45px;
+    }
   }
 
   &__item-header_active::after {

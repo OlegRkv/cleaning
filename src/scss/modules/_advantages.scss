@@ -6,15 +6,25 @@
   align-items: center;
   list-style-type: none;
 
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 576px) {
+    display: block;
+  }
+
   &__item {
     position: relative;
-    max-width: 250px;
+    flex-basis: 250px;
     width: 100%;
     padding: 44px 35px 44px 25px;
     border-radius: 30px;
     font-weight: 700;
     font-size: 14px;
     color: #fff;
+    background-position: right 0;
+    background-repeat: no-repeat;
 
     &::before {
       position: absolute;
@@ -25,6 +35,11 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+    }
+
+    @media (max-width: 1200px) {
+      margin-bottom: 15px;
+      flex-basis: 48%;
     }
   }
 

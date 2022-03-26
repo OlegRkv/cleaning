@@ -13,6 +13,10 @@
     transition: box-shadow 3s;
   }
 
+  @media (max-width: 576px) {
+    padding: 20px 35px;
+  }
+
   &__img-box {
     width: 95px;
     height: 95px;

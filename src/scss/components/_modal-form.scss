@@ -7,39 +7,27 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.4s;
+  z-index: 3;
 
   &_active {
     visibility: visible;
     opacity: 1;
-    overflow-y: auto;
   }
 
   &__wrapper {
     height: 100%;
+    padding-top: 40px;
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    align-items: center;
     background-color: rgb(138, 137, 137, 0.6);
-  }
-
-  &__offer {
-    max-width: 520px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    font-size: 20px;
-  }
-
-  &__descr {
-    max-width: 330px;
-    margin-bottom: 15px;
-    font-size: 14px;
+    overflow: auto;
   }
 
   &__content {
     position: relative;
     max-width: 890px;
     width: 100%;
-    margin: auto;
     padding: 50px 50px 55px 60px;
     background-color: #fff;
     border-radius: 30px;
@@ -47,6 +35,28 @@
     background-position: 0 0;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media (max-width: 768px) {
+      padding: 30px;
+      background-position: 55% 0;
+    }
+  }
+
+  &__offer {
+    max-width: 520px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+      max-width: 400px;
+    }
+  }
+
+  &__descr {
+    max-width: 330px;
+    margin-bottom: 15px;
+    font-size: 14px;
   }
 
   &__form {
@@ -60,6 +70,24 @@
       width: 100%;
       margin-right: 10px;
       border: 1px solid $blue;
+
+      @media (max-width: 768px) {
+        display: block;
+        margin-right: 0;
+      }
+    }
+
+    .form__button {
+      @media (max-width: 768px) {
+        max-width: 270px;
+        width: 100%;
+      }
+    }
+
+    .form__labeles {
+      @media (max-width: 576px) {
+        justify-content: flex-start;
+      }
     }
   }
 
@@ -81,6 +109,9 @@
       left: -5px;
       top: 18px;
       background-color: #fff;
+      @media (max-width: 992px) {
+        background-color: #4B5258;
+      }
     }
 
     &::before {
@@ -89,6 +120,11 @@
 
     &::after {
       transform: rotate(45deg);
+    }
+
+    @media (max-width: 992px) {
+      top: 30px;
+      right: 10px;
     }
   }
 }
